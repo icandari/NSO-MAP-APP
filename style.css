@@ -11,20 +11,20 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px 0; /* Optional: Add padding for spacing */
-    box-sizing: border-box; /* Ensure padding is included in width */
+    padding: 7px 0;
+    box-sizing: border-box;
 }
 
 .header-content {
     display: flex;
-    align-items: center; /* Vertically center the items */
-    justify-content: center; /* Horizontally center the content */
-    padding: 1px 0; /* Optional: Add padding for spacing */
+    align-items: center;
+    justify-content: center;
+    padding: 1px 0;
 }
 
 .logo {
-    max-width: 50px; /* Adjust the size of your logo */
-    margin-right: 10px; /* Space between the logo and the title */
+    max-width: 50px;
+    margin-right: 10px;
 }
 
 h1 {
@@ -35,32 +35,64 @@ h1 {
 
 /* Map container styling */
 .map-container {
+    position: relative;
     width: 100%;
-    padding: 0; /* Remove padding */
-    margin: 0; /* Remove margin */
-    box-sizing: border-box; /* Ensure padding is included in width */
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 /* Map image styling */
 .map-image {
-    width: 100%; /* Ensure the image fills the container */
-    height: auto; /* Maintain aspect ratio */
-    display: block; /* Remove extra space under the image */
-    
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
-.text{
+/* Step logo images styling */
+.step-logo {
+    position: absolute;
+    cursor: pointer;
+    z-index: 10; /* Ensure logos are on top of the map */
+}
+
+/* Position logo images */
+.step1 { top: 120px; left: 168px; width: 40px; }
+.step2 { top: 283px; left: 10px; width: 40px; }
+.step3 { top: 380px; left: 160px; width: 40px; }
+.step4 { top: 380px; left: 200px; width: 40px; }
+.step5 { top: 340px; left: 176px; width: 40px; }
+.step6 { top: 230px; left: 345px; width: 40px; }
+.step7 { top: 270px; left: 345px; width: 40px; }
+
+/* Text container styling */
+.text {
     text-align: left;
     padding: 15px;
 }
 
-/* Additional styles for headings and paragraphs */
-h2, h3, h4, h5, h6 {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 700; /* Makes headings bold */
+.step-info {
+    display: none; /* Hide all steps initially */
 }
 
-p, a, li {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400; /* Regular weight for body text */
+.step-info.active {
+    display: block; /* Show only the active step */
+}
+
+/* General styles for step-logo images */
+.step-logo {
+    position: absolute;
+    cursor: pointer;
+    z-index: 10; /* Ensure logos are on top of the map */
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+}
+
+/* Hover effect */
+.step-logo:hover {
+    transform: scale(1.7); /* Slightly enlarge the image on hover */
+}
+
+/* Active state for clicked image */
+.step-logo.active {
+    transform: scale(1.7); /* Enlarge the image when active */
 }
