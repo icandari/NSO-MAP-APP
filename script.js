@@ -13,23 +13,19 @@ const pins = document.querySelectorAll('.pin');
 
 pins.forEach((pinElement, index) => {
     const pinData = pinsData[index];
-    // Set the background image from the data attribute
     pinElement.style.backgroundImage = `url('${pinData.image}')`;
 
     pinElement.addEventListener('click', () => {
         if (activePin === pinElement) {
             // Clicked the active pin again: hide info and remove active class
             pinElement.classList.remove('active');
-            infoBox.classList.remove('show');
-            infoBox.classList.add('hide');
+            infoBox.innerHTML = 'Select a pin to see the details here.';
             activePin = null;
         } else {
             // Clicked a different pin or a non-active pin: show info and add active class
             if (activePin) {
                 // Remove active class from previously active pin
                 activePin.classList.remove('active');
-                infoBox.classList.remove('show');
-                infoBox.classList.add('hide');
             }
 
             // Get the current pin data
@@ -39,10 +35,6 @@ pins.forEach((pinElement, index) => {
 
             // Set the info box with the current pin's information
             infoBox.innerHTML = header + paragraph;
-
-            // Show the info box and slide it up
-            infoBox.classList.remove('hide');
-            infoBox.classList.add('show');
 
             // Add active class to the clicked pin
             pinElement.classList.add('active');
@@ -58,7 +50,6 @@ document.addEventListener('click', (e) => {
             activePin.classList.remove('active');
             activePin = null;
         }
-        infoBox.classList.remove('show');
-        infoBox.classList.add('hide');
+        infoBox.innerHTML = 'Select a pin to see the details here.';
     }
 });

@@ -1,54 +1,79 @@
+/* General Body Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
 }
 
+/* Header Styles */
+.header {
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 24px;
+    font-family: 'Open Sans', sans-serif;
+    color: #333;
+}
+
+/* Map Container */
 .map-container {
     position: relative;
     text-align: center;
-    margin: 0 auto;
+    margin: 20px auto;
     max-width: 100%;
 }
 
+/* Map Image */
 .map-image {
     width: 100%;
     height: auto;
 }
 
+/* Pin Styles */
 .pin {
     position: absolute;
-    width: 30px; /* Adjust size as needed */
-    height: 30px; /* Adjust size as needed */
-    background-image: url('images/custom-pin.png'); /* Path to your custom pin image */
-    background-size: cover; /* Ensure the image covers the entire area */
-    background-position: center; /* Center the image */
+    width: 30px;
+    height: 30px;
+    background-size: cover;
+    background-position: center;
     cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
+.pin.active {
+    transform: scale(1.2);
+}
+
+/* Location Info Box Styles */
 .location-info {
-    position: fixed;
-    bottom: -100px; /* Initially hidden off the bottom of the screen */
-    left: 0;
     width: 100%;
     background-color: white;
     border: 1px solid #ccc;
     padding: 10px;
     border-radius: 5px;
-    z-index: 1000;
-    opacity: 0; /* Start as invisible */
-    transition: bottom 0.5s ease-out, opacity 0.5s ease-out; /* Smooth sliding and fading effect */
-}
-
-.location-info.show {
-    bottom: 0; /* Slide up to visible position */
-    opacity: 1; /* Fade in to fully visible */
-}
-
-.location-info.hide {
-    bottom: -100px; /* Slide down out of view */
-    opacity: 0; /* Fade out to invisible */
+    text-align: center;
+    margin-top: 10px;
+    font-size: 16px;
+    color: #666;
 }
 
 .location-info h2 {
@@ -64,24 +89,9 @@ body {
     color: #666;
 }
 
-
+/* Media Queries */
 @media (max-width: 600px) {
     .location-info {
         font-size: 14px;
-        max-width: 150px;
     }
-}
-
-.pin {
-    position: absolute;
-    width: 30px; /* Original size */
-    height: 30px; /* Original size */
-    background-size: cover;
-    background-position: center;
-    cursor: pointer;
-    transition: transform 0.3s ease; /* Smooth transition */
-}
-
-.pin.active {
-    transform: scale(1.2); /* Slightly larger when active */
 }

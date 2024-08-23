@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header class="header">
+        <div class="header-content">
+            <img src="images/logo.png" alt="Logo" class="logo">
+            <h1>New Student Orientation</h1>
+        </div>
+    </header>
     <div class="map-container">
         <img src="images/map.png" alt="Campus Map" class="map-image">
         <!-- Pins will be placed here dynamically -->
@@ -16,7 +22,7 @@
             <div class="pin" data-info="Cafeteria: Grab a bite here!" data-image="images/pin3.png" style="top: 60%; left: 50%;"></div>
         </div>
     </div>
-    <div id="location-info" class="location-info"></div>
+    <div id="location-info" class="location-info">Select a pin to see the details here.</div>
     <script src="script.js"></script>
 </body>
 </html>
