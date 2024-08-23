@@ -50,21 +50,48 @@ h1 {
 .step-logo {
     position: absolute;
     cursor: pointer;
-    z-index: 10; /* Ensure logos are on top of the map */
-    transition: transform 0.3s ease; /* Smooth transition for scaling */
+    z-index: 10;
+    transition: transform 0.3s ease;
+    width: 8vw; /* Adjust this value */
+    height: 8vw; /* Adjust this value */
 }
 
 /* Specific positions for step logos */
 .step1 {
-    top: 2vw; /* Adjust this value */
-    left: 30vw; /* Adjust this value */
+    top: 34vw; /* Adjust this value */
+    left: 43vw; /* Adjust this value */
 }
 
 .step2 {
-    top: 5vw; /* Adjust this value */
-    left: 60vw; /* Adjust this value */
+    top: 73vw; /* Adjust this value */
+    left: 5vw; /* Adjust this value */
 }
 
+
+.step3 {
+    top: 98vw; /* Adjust this value */
+    left: 42vw; /* Adjust this value */
+}
+
+.step4 {
+    top: 98vw; /* Adjust this value */
+    left: 52vw; /* Adjust this value */
+}
+
+.step5 {
+    top: 88vw; /* Adjust this value */
+    left: 47vw; /* Adjust this value */
+}
+
+.step6 {
+    top: 60vw; /* Adjust this value */
+    left: 90vw; /* Adjust this value */
+}
+
+.step7 {
+    top: 68vw; /* Adjust this value */
+    left: 90vw; /* Adjust this value */
+}
 /* Hover effect */
 .step-logo:hover {
     transform: scale(1.7); /* Slightly enlarge the image on hover */

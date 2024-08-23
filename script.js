@@ -7,13 +7,22 @@ document.addEventListener('DOMContentLoaded', () => {
             const stepNumber = logo.getAttribute('data-step');
             const isActive = logo.classList.contains('active');
 
-            // Remove active class from all logos and hide all steps
-            logos.forEach(img => img.classList.remove('active'));
-            steps.forEach(step => step.classList.remove('active'));
-            
-            // If the clicked logo was not active, activate it and show its step
-            if (!isActive) {
+            if (isActive) {
+                // If the logo is already active, remove the active class and reset the transform
+                logo.classList.remove('active');
+                logo.style.transform = 'none';
+                document.getElementById('step' + stepNumber).classList.remove('active');
+            } else {
+                // Remove active class from all logos and hide all steps
+                logos.forEach(img => {
+                    img.classList.remove('active');
+                    img.style.transform = 'none';
+                });
+                steps.forEach(step => step.classList.remove('active'));
+
+                // Activate the clicked logo and show its step
                 logo.classList.add('active');
+                logo.style.transform = 'scale(1.7)'; // Add this line to scale the logo
                 document.getElementById('step' + stepNumber).classList.add('active');
             }
         });
