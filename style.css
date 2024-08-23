@@ -11,15 +11,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 7px 0;
+    padding: 0; /* Remove padding */
     box-sizing: border-box;
-}
-
-.header-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1px 0;
 }
 
 .logo {
@@ -33,58 +26,43 @@ h1 {
     color: #9e1b34;
 }
 
-/* Map container styling */
 .map-container {
     position: relative;
     width: 100%;
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+    height: 100vh; /* Set the height to 100% of the viewport height */
+    overflow: hidden; /* Add this property to prevent scrolling */
 }
-
-/* Map image styling */
-.map-image {
+.map-wrapper {
     width: 100%;
-    height: auto;
-    display: block;
+    padding-bottom: 150%; /* Adjust this value to match the image's aspect ratio */
+    position: relative;
 }
 
+.map-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Add this */
+    object-fit: contain;
+}
 /* Step logo images styling */
 .step-logo {
     position: absolute;
     cursor: pointer;
     z-index: 10; /* Ensure logos are on top of the map */
-}
-
-/* Position logo images */
-.step1 { top: 120px; left: 168px; width: 40px; }
-.step2 { top: 283px; left: 10px; width: 40px; }
-.step3 { top: 380px; left: 160px; width: 40px; }
-.step4 { top: 380px; left: 200px; width: 40px; }
-.step5 { top: 340px; left: 176px; width: 40px; }
-.step6 { top: 230px; left: 345px; width: 40px; }
-.step7 { top: 270px; left: 345px; width: 40px; }
-
-/* Text container styling */
-.text {
-    text-align: left;
-    padding: 15px;
-}
-
-.step-info {
-    display: none; /* Hide all steps initially */
-}
-
-.step-info.active {
-    display: block; /* Show only the active step */
-}
-
-/* General styles for step-logo images */
-.step-logo {
-    position: absolute;
-    cursor: pointer;
-    z-index: 10; /* Ensure logos are on top of the map */
     transition: transform 0.3s ease; /* Smooth transition for scaling */
+}
+
+/* Specific positions for step logos */
+.step1 {
+    top: 2vw; /* Adjust this value */
+    left: 30vw; /* Adjust this value */
+}
+
+.step2 {
+    top: 5vw; /* Adjust this value */
+    left: 60vw; /* Adjust this value */
 }
 
 /* Hover effect */
@@ -95,4 +73,19 @@ h1 {
 /* Active state for clicked image */
 .step-logo.active {
     transform: scale(1.7); /* Enlarge the image when active */
+}
+
+/* Text container styling */
+.text {
+    text-align: left;
+    padding: 15px;
+    box-sizing: border-box; /* Ensures padding doesn’t affect width */
+}
+
+.step-info {
+    display: none; /* Hide all steps initially */
+}
+
+.step-info.active {
+    display: block; /* Show only the active step */
 }
