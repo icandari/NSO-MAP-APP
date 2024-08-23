@@ -1,133 +1,66 @@
-/* General Body Styles */
+/* Ensure the body has no extra margin or padding */
 body {
-    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    font-family: 'Roboto', sans-serif;
 }
 
-/* Header Styles */
+/* Header styling */
 .header {
-    background-color: #fff;
-    border-bottom: 1px solid #ccc;
-    padding: 10px 20px;
-    text-align: center;
-    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0; /* Optional: Add padding for spacing */
+    box-sizing: border-box; /* Ensure padding is included in width */
 }
 
 .header-content {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: center; /* Vertically center the items */
+    justify-content: center; /* Horizontally center the content */
+    padding: 1px 0; /* Optional: Add padding for spacing */
 }
 
 .logo {
-    width: 50px;
-    height: auto;
-    margin-right: 10px;
+    max-width: 50px; /* Adjust the size of your logo */
+    margin-right: 10px; /* Space between the logo and the title */
 }
 
-.header h1 {
+h1 {
+    font-size: 1em;
     margin: 0;
-    font-size: 24px;
-    font-family: 'Open Sans', sans-serif;
-    color: #333;
+    color: #9e1b34;
 }
 
-/* Map Container */
+/* Map container styling */
 .map-container {
-    position: relative;
-    text-align: center;
-    margin: 20px auto;
-    max-width: 100%;
+    width: 100%;
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+    box-sizing: border-box; /* Ensure padding is included in width */
 }
 
-/* Map Image */
+/* Map image styling */
 .map-image {
-    width: 100%;
-    height: auto;
+    width: 100%; /* Ensure the image fills the container */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove extra space under the image */
+    
 }
 
-/* Pin Styles */
-.pin {
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    background-size: cover;
-    background-position: center;
-    cursor: pointer;
-    transition: transform 0.3s ease;
+.text{
+    text-align: left;
+    padding: 15px;
 }
 
-.pin.active {
-    transform: scale(1.2);
+/* Additional styles for headings and paragraphs */
+h2, h3, h4, h5, h6 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700; /* Makes headings bold */
 }
 
-/* Location Info Box Styles */
-/* Location Info Box Styles */
-.location-info {
-    width: 100%;
-    background-color: white;
-    border: 1px solid #ccc;
-    padding: 10px;
-    border-radius: 5px;
-    text-align: center;
-    margin-top: 10px;
-    font-size: 16px;
-    color: #666;
-    position: relative; /* Necessary for animation positioning */
-    overflow: hidden; /* Hide overflow during animation */
-}
-
-/* Keyframe animations */
-@keyframes slideInFromRight {
-    from {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes slideOutToLeft {
-    from {
-        transform: translateX(0);
-        opacity: 1;
-    }
-    to {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
-}
-
-/* Animation classes */
-.location-info.enter {
-    animation: slideInFromRight 0.5s forwards;
-}
-
-.location-info.leave {
-    animation: slideOutToLeft 0.5s forwards;
-}
-
-
-.location-info h2 {
-    margin: 0;
-    font-size: 18px;
-    font-weight: bold;
-    color: #333;
-}
-
-.location-info p {
-    margin: 10px 0 0;
-    font-size: 16px;
-    color: #666;
-}
-
-/* Media Queries */
-@media (max-width: 600px) {
-    .location-info {
-        font-size: 14px;
-    }
+p, a, li {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400; /* Regular weight for body text */
 }

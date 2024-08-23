@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Campus Tour</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
 </head>
 <body>
     <header class="header">
@@ -13,16 +19,87 @@
             <h1>New Student Orientation</h1>
         </div>
     </header>
-    <div class="map-container">
-        <img src="images/map.png" alt="Campus Map" class="map-image">
-        <!-- Pins will be placed here dynamically -->
-        <div id="pins-container">
-            <div class="pin" data-info="Welcome Center: Start here for your tour!" data-image="images/pin1.png" style="top: 20%; left: 30%;"></div>
-            <div class="pin" data-info="Library: Find all your study materials." data-image="images/pin2.png" style="top: 40%; left: 60%;"></div>
-            <div class="pin" data-info="Cafeteria: Grab a bite here!" data-image="images/pin3.png" style="top: 60%; left: 50%;"></div>
+    <div class="content">
+        <div class="map-container">
+            <img src="images/map.png" alt="Campus Map" class="map-image">
+            
+
         </div>
+
+        <div class="text">
+            <div id="step1"> 
+                <h2>Step 1: Take The 3 Canvas Courses</h2>
+                <p>
+                    Before arriving on campus, you are expected to finish three canvas courses:  
+                    -Title IX 
+                    -Honor Code 
+                    -New Student Orientation.
+                    If you haven't already, please complete these courses. Computers are available in the library.
+                    Hours are Mon - Thur: 7:00 am – 12:00 am, Fri: 7:00 am - 8:00 pm, Sat: 9:00 am - 3:00 pm
+                    Contact: If you have not received any course invitation, please email orientation@byuh.edu
+                </p>
+            </div>
+            <div id="step2"> 
+                <h2>Step 2: Tuberculosis Test</h2>
+                <p>
+                    Bring your vaccination records to the Health Center 
+                    if you have not submitted your immunization records.
+                </p>
+            </div>
+            <div id="step3"> 
+                <h2>Step 3: One Stop Onboarding</h2>
+                <p>
+                    Bring the following documents to the Aloha Center in printed AND PDF format:
+                    DS 2019, I-20 or I-20, Passport, Visa, and proof of Tuberculosis Test.
+                    The One Stop Onboarding process assists you in submitting all the required 
+                    documents to establish your records on campus. 
+                    Representatives from different departments will be available to assist you.
+                    We highly recommend that you bring a laptop.
+                    
+                </p>
+            </div>
+            <div id="step4"> 
+                <h2>Step 4: Set Up Your Mailbox</h2>
+                <p>
+                    Head over to the Mailing Center to get your mail box number
+                    so you can start getting mail on-campus. Be prepared to provide your email address.
+                </p>
+    
+            </div>
+            <div id="step5"> 
+                <h2>Step 5: Get Your Student ID</h2>
+                <p>
+                    After you have completed all of the previous steps, come to the ALoha Center informaqtion desk
+                    to get your student ID. Be prepared to provide your student ID number.
+                </p>
+            </div>
+            <div id="step6"> 
+                <h2>Step 6(Optional): Set Up A Bank Account</h2>
+                <p>
+                    American Savings Bank is a popular bank among students. It is located in the Foodland grocery store.
+                    Some international students' bank accounts may not work in the U.S. 
+                    If yours does not, we advise you to set up a new account for easy access to paychecks and bills.
+                    Be prepared to provied your Passport, DS-2019, Phone Number and Email Address. Hours are Monday to Saturday
+                    9:00am-5:00pm
+                    
+                </p>
+            </div>
+            <div id="step7"> 
+                <h2>Step 7(Optional): Get A Holo Card</h2>
+                <p>
+                    While you are at Foodland, consider getting a Holo Card, which is a prepaid card
+                    that can be used to pay for bus fees. The bus has routes connecting the campus to
+                    the whole island and is a convenient and cheap way to get around.
+                    Holo Cards can be purchased at the Foodland Customer Service Counter.
+                    Hours are Monday to Saturday 6:00am-10:00pm
+                </p>
+            </div>
+
+        </div>
+
     </div>
-    <div id="location-info" class="location-info">Select a pin to see the details here.</div>
+    
+    
     <script src="script.js"></script>
 </body>
 </html>
