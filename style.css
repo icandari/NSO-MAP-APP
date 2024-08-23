@@ -64,6 +64,7 @@ body {
 }
 
 /* Location Info Box Styles */
+/* Location Info Box Styles */
 .location-info {
     width: 100%;
     background-color: white;
@@ -74,7 +75,42 @@ body {
     margin-top: 10px;
     font-size: 16px;
     color: #666;
+    position: relative; /* Necessary for animation positioning */
+    overflow: hidden; /* Hide overflow during animation */
 }
+
+/* Keyframe animations */
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOutToLeft {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
+/* Animation classes */
+.location-info.enter {
+    animation: slideInFromRight 0.5s forwards;
+}
+
+.location-info.leave {
+    animation: slideOutToLeft 0.5s forwards;
+}
+
 
 .location-info h2 {
     margin: 0;

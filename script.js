@@ -1,6 +1,7 @@
 const pinsContainer = document.getElementById('pins-container');
 const infoBox = document.getElementById('location-info');
 let activePin = null;
+let isAnimating = false;
 
 // Define the pins with step number, location, and explanation
 const pinsData = [
@@ -16,19 +17,43 @@ pins.forEach((pinElement, index) => {
     pinElement.style.backgroundImage = `url('${pinData.image}')`;
 
     pinElement.addEventListener('click', () => {
-        if (activePin === pinElement) {
-            // Clicked the active pin again: hide info and remove active class
-            pinElement.classList.remove('active');
-            infoBox.innerHTML = 'Select a pin to see the details here.';
-            activePin = null;
-        } else {
-            // Clicked a different pin or a non-active pin: show info and add active class
-            if (activePin) {
+        if (activePin === pinElement || isAnimating) {
+            // Ignore click if already animating or clicking the same pin
+            return;
+        }
+
+        // Start animation if there is an active pin
+        if (activePin) {
+            infoBox.classList.add('leave');
+            isAnimating = true;
+
+            // Wait for the leave animation to finish before updating content
+            setTimeout(() => {
                 // Remove active class from previously active pin
                 activePin.classList.remove('active');
-            }
+                infoBox.classList.remove('leave');
+                infoBox.classList.add('enter');
 
-            // Get the current pin data
+                // Get the current pin data
+                const pinInfo = pinsData[index];
+                const header = `<h2>${pinInfo.step}: ${pinInfo.location}</h2>`;
+                const paragraph = `<p>${pinInfo.explanation}</p>`;
+
+                // Set the info box with the current pin's information
+                infoBox.innerHTML = header + paragraph;
+
+                // Add active class to the clicked pin
+                pinElement.classList.add('active');
+                activePin = pinElement;
+
+                // Reset the animation state
+                setTimeout(() => {
+                    infoBox.classList.remove('enter');
+                    isAnimating = false;
+                }, 500); // Match this with the duration of your animation
+            }, 500); // Match this with the duration of the slide-out animation
+        } else {
+            // No active pin, just show new info
             const pinInfo = pinsData[index];
             const header = `<h2>${pinInfo.step}: ${pinInfo.location}</h2>`;
             const paragraph = `<p>${pinInfo.explanation}</p>`;
@@ -36,7 +61,8 @@ pins.forEach((pinElement, index) => {
             // Set the info box with the current pin's information
             infoBox.innerHTML = header + paragraph;
 
-            // Add active class to the clicked pin
+            // Show the info box with animation
+            infoBox.classList.add('enter');
             pinElement.classList.add('active');
             activePin = pinElement;
         }
@@ -50,6 +76,13 @@ document.addEventListener('click', (e) => {
             activePin.classList.remove('active');
             activePin = null;
         }
-        infoBox.innerHTML = 'Select a pin to see the details here.';
+        if (!isAnimating) {
+            infoBox.classList.remove('enter');
+            infoBox.classList.add('leave');
+            setTimeout(() => {
+                infoBox.classList.remove('leave');
+                infoBox.innerHTML = 'Select a pin to see the details here.';
+            }, 500); // Match this with the duration of the slide-out animation
+        }
     }
 });
