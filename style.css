@@ -27,6 +27,13 @@ h1 {
     color: #9e1b34;
 }
 
+
+.step-location h1 {
+    font-size: 1em;
+    margin: 0;
+    color: #666;
+}
+
 .map-container {
     position: relative;
     width: 100%;
@@ -175,7 +182,12 @@ h1 {
   }
 
   .step-title {
-    font-size: 20px; /* adjust the font size to your liking */
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 1; /* remove any top margin */
+    font-size: 18px; /* adjust the font size to your liking */
+    font-family: 'Inter', sans-serif;
+    color: #9e1b34;
     
   }
 
@@ -255,3 +267,43 @@ a {
   
   /* Add some visual flair to the default text container */
   
+  .step-location h1 {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap; /* add this property */
+  }
+  
+  .step-location img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }
+  
+  .step-location span {
+    font-size: 18px;
+  }
+  
+  .whereicon, .whenicon {
+    vertical-align: middle;
+  }
+  
+  /* make the icons and text responsive */
+  @media (max-width: 768px) {
+    .step-location img {
+        font-size: 10px;
+        margin-right: 5px;
+    }
+    .step-location span {
+      font-size: 15px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .step-location img {
+      width: 40px;
+      height: 40px;
+    }
+    .step-location span {
+      font-size: px;
+    }
+  }
